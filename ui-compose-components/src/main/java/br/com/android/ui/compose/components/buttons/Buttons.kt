@@ -1,6 +1,5 @@
 package br.com.android.ui.compose.components.buttons
 
-import android.R.attr.textStyle
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
