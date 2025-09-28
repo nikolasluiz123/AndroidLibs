@@ -34,7 +34,7 @@ import br.com.android.ui.compose.components.video.state.VideoGalleryViewMode
  * @author Nikolas Luiz Schmitt
  */
 @Composable
-internal fun ThumbnailsViewer(
+fun ThumbnailsViewer(
     state: VideoGalleryState,
     onVideoClick: OnVideoClick? = null,
     onVideoDeleteClick: OnVideoDeleteClick? = null,

@@ -23,7 +23,7 @@ import br.com.android.ui.compose.components.video.state.VideoGalleryState
  * @author Nikolas Luiz Schmitt
  */
 @Composable
-internal fun ActionsBottomBar(
+fun ActionsBottomBar(
     modifier: Modifier,
     state: VideoGalleryState,
     actions: @Composable (RowScope.() -> Unit)

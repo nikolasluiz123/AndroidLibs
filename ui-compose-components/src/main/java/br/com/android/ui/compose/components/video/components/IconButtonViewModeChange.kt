@@ -18,7 +18,7 @@ import br.com.android.ui.compose.components.video.state.VideoGalleryViewMode
  * @author Nikolas Luiz Schmitt
  */
 @Composable
-internal fun IconButtonViewModeChange(state: VideoGalleryState) {
+fun IconButtonViewModeChange(state: VideoGalleryState) {
     IconButton(
         onClick = {
             val viewMode = getNewViewModeBy(state)
