@@ -24,8 +24,7 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
-import br.com.android.ui.compose.components.dialog.list.interfaces.ISimpleDialogListItem
-import br.com.android.ui.compose.components.dialog.list.paged.PagedDialogListState
+import br.com.core.android.utils.interfaces.ISimpleListItem
 import br.com.android.ui.compose.components.list.PagedLazyVerticalList
 import br.com.android.ui.compose.components.simplefilter.SimpleFilter
 import br.com.android.ui.compose.components.styles.DialogTitleTextStyle
@@ -33,7 +32,7 @@ import br.com.android.ui.compose.components.styles.DialogTitleTextStyle
 /**
  * Um diálogo que exibe uma lista paginada de itens filtráveis, usando um [PagedDialogListState].
  *
- * @param T O tipo de item na lista, que deve implementar [ISimpleDialogListItem].
+ * @param T O tipo de item na lista, que deve implementar [ISimpleListItem].
  * @param state O estado que gerencia o diálogo.
  * @param simpleFilterPlaceholderResId O ID do recurso de string para o placeholder do filtro.
  * @param emptyMessage O ID do recurso de string para a mensagem de lista vazia.
@@ -43,7 +42,7 @@ import br.com.android.ui.compose.components.styles.DialogTitleTextStyle
  * @author Nikolas Luiz Schmitt
  */
 @Composable
-fun <T : ISimpleDialogListItem> BasePagedListDialog(
+fun <T : ISimpleListItem> BasePagedListDialog(
     state: PagedDialogListState<T>,
     simpleFilterPlaceholderResId: Int,
     emptyMessage: Int,
@@ -63,7 +62,7 @@ fun <T : ISimpleDialogListItem> BasePagedListDialog(
 /**
  * Um diálogo que exibe uma lista paginada de itens filtráveis.
  *
- * @param T O tipo de item na lista, que deve implementar [ISimpleDialogListItem].
+ * @param T O tipo de item na lista, que deve implementar [ISimpleListItem].
  * @param dialogTitle O título do diálogo.
  * @param pagingItems Os itens paginados a serem exibidos.
  * @param simpleFilterPlaceholderResId O ID do recurso de string para o placeholder do filtro.
@@ -78,7 +77,7 @@ fun <T : ISimpleDialogListItem> BasePagedListDialog(
  * @author Nikolas Luiz Schmitt
  */
 @Composable
-fun <T : ISimpleDialogListItem> BasePagedListDialog(
+fun <T : ISimpleListItem> BasePagedListDialog(
     dialogTitle: String,
     pagingItems: LazyPagingItems<T>,
     simpleFilterPlaceholderResId: Int,
@@ -137,7 +136,7 @@ fun <T : ISimpleDialogListItem> BasePagedListDialog(
 }
 
 @Composable
-private fun <T : ISimpleDialogListItem> PagedListDialog(
+private fun <T : ISimpleListItem> PagedListDialog(
     pagingItems: LazyPagingItems<T>,
     emptyMessage: Int,
     itemLayout: @Composable (T) -> Unit,

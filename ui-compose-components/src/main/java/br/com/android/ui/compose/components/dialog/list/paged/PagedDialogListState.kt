@@ -1,14 +1,14 @@
 package br.com.android.ui.compose.components.dialog.list.paged
 
 import androidx.paging.PagingData
-import br.com.android.ui.compose.components.dialog.list.interfaces.ISimpleDialogListItem
+import br.com.core.android.utils.interfaces.ISimpleListItem
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
 
 /**
  * Representa o estado de um [BasePagedListDialog].
  *
- * @param T O tipo de item na lista, que deve implementar [ISimpleDialogListItem].
+ * @param T O tipo de item na lista, que deve implementar [ISimpleListItem].
  * @property dialogTitle O título a ser exibido no diálogo.
  * @property dataList Um [Flow] de [PagingData] contendo os itens a serem exibidos na lista paginada.
  * @property show `true` se o diálogo deve ser exibido, `false` caso contrário.
@@ -21,7 +21,7 @@ import kotlinx.coroutines.flow.emptyFlow
  * @see [BasePagedListDialog]
  * @author Nikolas Luiz Schmitt
  */
-data class PagedDialogListState<T: ISimpleDialogListItem>(
+data class PagedDialogListState<T: ISimpleListItem>(
     val dialogTitle: String = "",
     val dataList: Flow<PagingData<T>> = emptyFlow(),
     val show: Boolean = false,

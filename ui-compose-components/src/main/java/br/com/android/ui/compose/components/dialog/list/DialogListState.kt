@@ -1,11 +1,11 @@
 package br.com.android.ui.compose.components.dialog.list
 
-import br.com.android.ui.compose.components.dialog.list.interfaces.ISimpleDialogListItem
+import br.com.core.android.utils.interfaces.ISimpleListItem
 
 /**
  * Representa o estado de um [BaseListDialog].
  *
- * @param T O tipo de item na lista, que deve implementar [ISimpleDialogListItem].
+ * @param T O tipo de item na lista, que deve implementar [ISimpleListItem].
  * @property dialogTitle O título a ser exibido no diálogo.
  * @property dataList A lista de itens a serem exibidos.
  * @property show `true` se o diálogo deve ser exibido, `false` caso contrário.
@@ -17,7 +17,7 @@ import br.com.android.ui.compose.components.dialog.list.interfaces.ISimpleDialog
  * @see [BaseListDialog]
  * @author Nikolas Luiz Schmitt
  */
-data class DialogListState<T: ISimpleDialogListItem>(
+data class DialogListState<T: ISimpleListItem>(
     val dialogTitle: String = "",
     val dataList: List<T> = emptyList(),
     val show: Boolean = false,

@@ -6,13 +6,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import br.com.android.ui.compose.components.buttons.icons.IconButtonSearch
-import br.com.android.ui.compose.components.dialog.list.interfaces.ISimpleDialogListItem
+import br.com.core.android.utils.interfaces.ISimpleListItem
 import br.com.android.ui.compose.components.dialog.list.paged.BasePagedListDialog
 import br.com.android.ui.compose.components.fields.text.OutlinedTextFieldValidation
 import br.com.android.ui.compose.components.fields.text.dialog.paged.state.PagedDialogListTextField
 
 @Composable
-fun <T: ISimpleDialogListItem> PagedListDialogOutlinedTextFieldValidation(
+fun <T: ISimpleListItem> PagedListDialogOutlinedTextFieldValidation(
     field: PagedDialogListTextField<T>,
     fieldLabel: String,
     simpleFilterPlaceholderResId: Int,

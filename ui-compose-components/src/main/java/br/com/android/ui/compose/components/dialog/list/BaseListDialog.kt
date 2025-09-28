@@ -26,7 +26,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import br.com.android.ui.compose.components.dialog.list.interfaces.ISimpleDialogListItem
+import br.com.core.android.utils.interfaces.ISimpleListItem
 import br.com.android.ui.compose.components.list.EmptyState
 import br.com.android.ui.compose.components.simplefilter.SimpleFilter
 import br.com.android.ui.compose.components.styles.DialogTitleTextStyle
@@ -35,7 +35,7 @@ import br.com.android.ui.compose.components.styles.DialogTitleTextStyle
  * Um diálogo que exibe uma lista de itens filtráveis.
  * Esta é uma sobrecarga que usa um [DialogListState] para gerenciar o estado do diálogo.
  *
- * @param T O tipo de item na lista, que deve implementar [ISimpleDialogListItem].
+ * @param T O tipo de item na lista, que deve implementar [ISimpleListItem].
  * @param state O estado que controla o diálogo, incluindo a lista de itens e a visibilidade.
  * @param simpleFilterPlaceholderResId O ID do recurso de string para o placeholder do campo de filtro.
  * @param emptyMessage O ID do recurso de string para a mensagem exibida quando a lista está vazia.
@@ -45,7 +45,7 @@ import br.com.android.ui.compose.components.styles.DialogTitleTextStyle
  * @author Nikolas Luiz Schmitt
  */
 @Composable
-fun <T : ISimpleDialogListItem> BaseListDialog(
+fun <T : ISimpleListItem> BaseListDialog(
     state: DialogListState<T>,
     simpleFilterPlaceholderResId: Int,
     emptyMessage: Int,
@@ -65,7 +65,7 @@ fun <T : ISimpleDialogListItem> BaseListDialog(
 /**
  * Um diálogo que exibe uma lista de itens filtráveis.
  *
- * @param T O tipo de item na lista, que deve implementar [ISimpleDialogListItem].
+ * @param T O tipo de item na lista, que deve implementar [ISimpleListItem].
  * @param dialogTitle O título do diálogo.
  * @param items A lista de itens a serem exibidos.
  * @param simpleFilterPlaceholderResId O ID do recurso de string para o placeholder do campo de filtro.
@@ -81,7 +81,7 @@ fun <T : ISimpleDialogListItem> BaseListDialog(
  * @author Nikolas Luiz Schmitt
  */
 @Composable
-fun <T : ISimpleDialogListItem> BaseListDialog(
+fun <T : ISimpleListItem> BaseListDialog(
     dialogTitle: String,
     items: List<T>,
     simpleFilterPlaceholderResId: Int,
@@ -149,7 +149,7 @@ fun <T : ISimpleDialogListItem> BaseListDialog(
 }
 
 @Composable
-private fun <T : ISimpleDialogListItem> BaseListDialog(
+private fun <T : ISimpleListItem> BaseListDialog(
     items: List<T>,
     emptyMessage: Int,
     itemLayout: @Composable (T) -> Unit,

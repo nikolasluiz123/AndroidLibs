@@ -1,4 +1,4 @@
-package br.com.android.ui.compose.components.dialog.list.interfaces
+package br.com.core.android.utils.interfaces
 
 /**
  * Interface que define o contrato para um item de um diálogo de lista simples.
@@ -6,7 +6,7 @@ package br.com.android.ui.compose.components.dialog.list.interfaces
  *
  * @author Nikolas Luiz Schmitt
  */
-interface ISimpleDialogListItem {
+interface ISimpleListItem {
     /**
      * Retorna o rótulo de texto a ser exibido para este item na lista.
      */

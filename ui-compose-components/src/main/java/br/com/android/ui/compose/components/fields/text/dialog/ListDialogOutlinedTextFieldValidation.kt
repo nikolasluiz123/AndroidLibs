@@ -7,12 +7,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import br.com.android.ui.compose.components.buttons.icons.IconButtonSearch
 import br.com.android.ui.compose.components.dialog.list.BaseListDialog
-import br.com.android.ui.compose.components.dialog.list.interfaces.ISimpleDialogListItem
+import br.com.core.android.utils.interfaces.ISimpleListItem
 import br.com.android.ui.compose.components.fields.text.OutlinedTextFieldValidation
 import br.com.android.ui.compose.components.fields.text.dialog.state.DialogListTextField
 
 @Composable
-fun <T: ISimpleDialogListItem> ListDialogOutlinedTextFieldValidation(
+fun <T: ISimpleListItem> ListDialogOutlinedTextFieldValidation(
     field: DialogListTextField<T>,
     fieldLabel: String,
     simpleFilterPlaceholderResId: Int,
