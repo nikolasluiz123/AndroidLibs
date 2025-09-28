@@ -1,0 +1,56 @@
+name: Publish Android Library
+
+on:
+  workflow_dispatch:
+    inputs:
+      module_name:
+        description: 'Nome do módulo para publicar (ex: core-utils)'
+        required: true
+        type: choice
+        options:
+          - core-utils
+          - core-android-utils
+          - core-android-compose-utils
+          - android-pdf-generator
+          - compose-charts
+          - firebase-toolkit
+          - room-toolkit
+          - health-connect-toolkit
+          - ui-compose-components
+          - work-manager-toolkit
+      version:
+        description: 'Versão para publicar (ex: 1.0.0)'
+        required: true
+        type: string
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '22'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          cache-read-only: false
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      - name: Publish Library to GitHub Packages
+        env:
+          GPR_USER: ${{ github.actor }}
+          GPR_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
+        run: |
+          ./gradlew :${{ inputs.module_name }}:publish -Pversion=${{ inputs.version }}
