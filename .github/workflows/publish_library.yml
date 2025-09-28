@@ -53,4 +53,4 @@ jobs:
           GPR_USER: ${{ github.actor }}
           GPR_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
         run: |
-          ./gradlew :${{ inputs.module_name }}:publishReleasePublicationToGitHubPackagesRepository -Pversion=${{ inputs.version }}
+          ./gradlew :${{ inputs.module_name }}:publish -Pversion=${{ inputs.version }}

@@ -41,3 +41,9 @@ publishing {
         }
     }
 }
+
+tasks.register("publish") {
+    group = "publishing"
+    description = "Publishes the release publication to the GitHub Packages repository."
+    dependsOn(tasks.named("publishReleasePublicationToGitHubPackagesRepository"))
+}
