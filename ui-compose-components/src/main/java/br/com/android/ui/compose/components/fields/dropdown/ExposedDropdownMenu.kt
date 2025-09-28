@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import br.com.android.ui.compose.components.buttons.icons.IconButtonArrowDown
 import br.com.android.ui.compose.components.fields.dropdown.state.DropDownTextField
@@ -81,7 +82,8 @@ fun <T> DefaultExposedDropdownMenu(
     items: List<MenuItem<T?>>,
     modifier: Modifier = Modifier,
     showClearOption: Boolean = false,
-    clearOptionText: String = ""
+    clearOptionText: String = "",
+    trailingIconColor: Color = MaterialTheme.colorScheme.onBackground
 ) {
     ExposedDropdownMenuBox(
         modifier = modifier,
@@ -99,7 +101,7 @@ fun <T> DefaultExposedDropdownMenu(
                     modifier = Modifier
                         .rotate(if (expanded) 180f else 0f),
                     onClick = { },
-                    iconColor = MaterialTheme.colorScheme.onBackground
+                    iconColor = trailingIconColor
                 )
             },
             readOnly = true
