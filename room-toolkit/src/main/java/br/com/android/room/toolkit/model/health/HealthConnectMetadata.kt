@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import br.com.android.room.toolkit.model.enums.EnumTransmissionState
+import br.com.android.room.toolkit.model.health.enums.EnumDeviceType
+import br.com.android.room.toolkit.model.health.enums.EnumRecordingMethod
 import br.com.android.room.toolkit.model.interfaces.sync.IntegratedModel
 import java.time.LocalDateTime
 

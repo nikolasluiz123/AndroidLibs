@@ -2,7 +2,6 @@ package br.com.android.health.connect.toolkit.mapper.result
 
 import br.com.android.room.toolkit.model.health.HealthConnectMetadata
 import br.com.android.room.toolkit.model.health.interfaces.IRelationalHealthConnectEntity
-import br.com.android.room.toolkit.model.interfaces.IRelationalHealthConnectEntity
 
 /**
  * Um wrapper genérico para resultados de mapeamento que consistem em uma única
