@@ -29,7 +29,7 @@ import kotlin.text.substringAfterLast
  *
  * @author Nikolas Luiz Schmitt
  */
-abstract class AbstractStorageBucketService(private val context: Context) {
+abstract class AbstractStorageBucketService(protected val context: Context) {
 
     /**
      * O número máximo de downloads que podem ser executados em paralelo.
