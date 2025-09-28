@@ -1,0 +1,85 @@
+package br.com.android.compose.charts.composables.bar.grouped
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import br.com.android.compose.charts.composables.container.BarChartContainer
+import br.com.android.compose.charts.states.bar.GroupedBarChartState
+import br.com.android.compose.charts.styles.bar.GroupedBarChartStyle
+
+/**
+ * Um Composable que renderiza um gráfico de barras agrupadas.
+ *
+ * Este gráfico exibe múltiplos valores de barra para cada entrada no eixo X, permitindo a
+ * comparação de diferentes séries de dados lado a lado.
+ *
+ * @param state O [GroupedBarChartState] que contém os dados a serem exibidos.
+ * @param style O [GroupedBarChartStyle] que define a aparência do gráfico.
+ * @param modifier O [Modifier] a ser aplicado ao componente.
+ *
+ * @see [BarChartContainer]
+ * @see [GroupedBars]
+ * @see [GroupedBarChartState]
+ * @see [GroupedBarChartStyle]
+ *
+ * @author Nikolas Luiz Schmitt
+ */
+@Composable
+fun GroupedBarChart(
+    state: GroupedBarChartState,
+    style: GroupedBarChartStyle,
+    modifier: Modifier = Modifier
+) {
+    require(style.defaultBarStyles.isNotEmpty()) { "GroupedBarChartStyle requer pelo menos um BarStyle em defaultBarStyles." }
+
+    val maxValue = (state.entries.maxOfOrNull {
+        it.values.maxOrNull() ?: 0f
+    } ?: 0f).coerceAtLeast(1f)
+
+    BarChartContainer(
+        modifier = modifier,
+        state = state,
+        backgroundStyle = style.backgroundStyle,
+        legendStyle = style.legendStyle,
+        maxValue = maxValue
+    ) { chartHeight, totalChartWidth, actualSlotWidth ->
+        val barWidthFraction = 0.9f
+        val bgStyle = style.backgroundStyle
+
+        val rowArrangement = if (bgStyle.enableHorizontalScroll) {
+            Arrangement.Start
+        } else {
+            Arrangement.SpaceEvenly
+        }
+
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = rowArrangement,
+            verticalAlignment = Alignment.Bottom
+        ) {
+            state.entries.forEachIndexed { groupIndex, entry ->
+
+                val slotModifier = if (bgStyle.enableHorizontalScroll) {
+                    Modifier.width(actualSlotWidth)
+                } else {
+                    Modifier.weight(1f, fill = true)
+                }
+
+                GroupedBars(
+                    entry = entry,
+                    styles = style.defaultBarStyles,
+                    maxValue = maxValue,
+                    groupIndex = groupIndex,
+                    barWidthFraction = barWidthFraction,
+                    modifier = slotModifier.padding(horizontal = 24.dp)
+                )
+            }
+        }
+    }
+}

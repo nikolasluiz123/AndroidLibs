@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="database_backup_exporter_file_not_found_message">Gerado em: %s</string>
+
+    <string name="enum_recording_method_unknown">Desconhecido</string>
+    <string name="enum_recording_method_active">Registrado ativamente pelo usuário</string>
+    <string name="enum_recording_method_automatically">Registrado automaticamente pelo dispositivo</string>
+    <string name="enum_recording_method_manual">Registrado manualmente pelo usuário</string>
+
+    <string name="enum_device_type_unknown">Dispositivo Desconhecido</string>
+    <string name="enum_device_type_watch">Smartwatch</string>
+    <string name="enum_device_type_phone">Smartphone</string>
+    <string name="enum_device_type_scale">Escala</string>
+    <string name="enum_device_type_ring">Anel</string>
+    <string name="enum_device_type_head_mounted">Óculos de Realidade Virtual</string>
+    <string name="enum_device_type_fitness_band">Relógio de Treino</string>
+    <string name="enum_device_type_chest_strap">Cinta com Sensor</string>
+    <string name="enum_device_type_smart_display">Tela Inteligente</string>
+</resources>
