@@ -27,7 +27,7 @@ import kotlinx.coroutines.withContext
  *
  * @author Nikolas Luiz Schmitt
  */
-abstract class AbstractFirebaseGoogleAuthenticationService(private val context: Context) {
+abstract class AbstractFirebaseGoogleAuthenticationService(protected val context: Context) {
 
     /**
      * Deve retornar o Client ID do servidor, obtido no Console de APIs do Google.
