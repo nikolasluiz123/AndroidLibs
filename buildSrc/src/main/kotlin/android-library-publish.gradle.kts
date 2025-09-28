@@ -16,7 +16,7 @@ extensions.configure<com.android.build.gradle.LibraryExtension> {
 }
 
 val libraryGroupId = "br.com.androidlibs"
-val libraryVersion: String by project
+val libraryVersion = project.property("library.version") as String
 
 publishing {
     publications {
@@ -40,10 +40,4 @@ publishing {
             }
         }
     }
-}
-
-tasks.register("publish") {
-    group = "publishing"
-    description = "Publishes the release publication to the GitHub Packages repository."
-    dependsOn(tasks.named("publishReleasePublicationToGitHubPackagesRepository"))
 }
