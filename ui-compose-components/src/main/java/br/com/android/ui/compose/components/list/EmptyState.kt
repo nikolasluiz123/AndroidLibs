@@ -26,11 +26,12 @@ import br.com.android.ui.compose.components.styles.LabelTextStyle
 @Composable
 fun EmptyState(
     emptyMessage: String,
+    modifier: Modifier = Modifier,
     color: Color = MaterialTheme.colorScheme.onBackground,
     textStyle: TextStyle = LabelTextStyle
 ) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(horizontal = 16.dp),
         contentAlignment = Alignment.Center

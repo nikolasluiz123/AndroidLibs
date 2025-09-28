@@ -3,19 +3,14 @@ package br.com.android.ui.compose.components.list.grouped.expandable
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.shrinkVertically
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import br.com.android.ui.compose.components.styles.LabelTextStyle
+import br.com.android.ui.compose.components.list.EmptyState
 
 /**
  * Um [LazyColumn] que exibe uma lista de grupos expansíveis.
@@ -85,15 +80,9 @@ fun <T, GROUP : IBasicExpandableGroup<T>> LazyExpandableGroupedVerticalList(
             }
         )
     } else {
-        Box(
-            modifier = modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            Text(
-                text = stringResource(id = emptyMessageResId),
-                style = LabelTextStyle,
-                color = MaterialTheme.colorScheme.onBackground
-            )
-        }
+        EmptyState(
+            modifier = modifier,
+            emptyMessage = stringResource(id = emptyMessageResId)
+        )
     }
 }
