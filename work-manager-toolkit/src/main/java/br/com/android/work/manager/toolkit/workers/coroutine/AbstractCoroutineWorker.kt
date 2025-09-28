@@ -65,7 +65,6 @@ abstract class AbstractCoroutineWorker(
         val startTime = inputData.getLong("startTime", System.currentTimeMillis())
         val elapsed = System.currentTimeMillis() - startTime
 
-        // Previne re-tentativas após o tempo limite definido
         if (elapsed > getMaxRetryTimeMillis()) {
             return@withContext Result.failure()
         }
