@@ -26,7 +26,7 @@ class PeriodicWorkerRequester(
     private val context: Context,
     private val clazz: Class<out AbstractCoroutineWorker>,
     builder: PeriodicWorkRequest.Builder,
-    workerDelay: Long = MIN_PERIODIC_WORKER_DELAY
+    workerDelay: Long = MIN_PERIODIC_WORKER_DELAY_MINS
 ) {
 
     private val constraints = Constraints.Builder()
@@ -56,6 +56,6 @@ class PeriodicWorkerRequester(
         /**
          * O atraso mínimo permitido para workers periódicos, conforme definido pelo WorkManager (15 minutos).
          */
-        const val MIN_PERIODIC_WORKER_DELAY = 15L
+        const val MIN_PERIODIC_WORKER_DELAY_MINS = 15L
     }
 }
