@@ -22,7 +22,7 @@ abstract class AbstractImportationOneTimeWorker(
     workerParams: WorkerParameters
 ) : AbstractSyncOneTimeWorker(context, workerParams) {
 
-    final override suspend fun shouldRunWorker(): Boolean {
+    override suspend fun shouldRunWorker(): Boolean {
         return context.workerDataStore.getRunImportWorker()
     }
 
