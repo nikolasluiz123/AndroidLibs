@@ -116,7 +116,7 @@ jobs:
           PREVIOUS_TAG=$(git describe --tags --match "${MODULE_NAME}-v*" --abbrev=0 $(git rev-list --tags --skip=1 --max-count=1 --match="${MODULE_NAME}-v*") 2>/dev/null || git rev-list --max-parents=0 HEAD)
           echo "Previous tag for ${MODULE_NAME} is ${PREVIOUS_TAG}"
           
-          CHANGELOG_BODY=$(conventional-changelog-cli -p angular --commit-path ./${MODULE_NAME} --lerna-package ${MODULE_NAME} --from ${PREVIOUS_TAG} --to ${TAG_NAME})
+          CHANGELOG_BODY=$(npx conventional-changelog-cli -p angular --commit-path ./${MODULE_NAME} --lerna-package ${MODULE_NAME} --from ${PREVIOUS_TAG} --to ${TAG_NAME})
           
           echo "CHANGELOG<<EOF" >> $GITHUB_ENV
           echo "${CHANGELOG_BODY}" >> $GITHUB_ENV
@@ -133,6 +133,7 @@ jobs:
             ## Changelog
             
             ${{ env.CHANGELOG }}
-
+            
+            _Release e pacote gerados automaticamente._
           draft: false
           prerelease: false
