@@ -24,5 +24,5 @@ interface ITransactionalWorker {
      *
      * @return Uma função que executa um bloco de código `suspend` dentro de uma transação.
      */
-    fun getTransactionManager(): (block: suspend () -> Unit) -> Unit
+    fun getTransactionManager(): suspend (suspend () -> Unit) -> Unit
 }
