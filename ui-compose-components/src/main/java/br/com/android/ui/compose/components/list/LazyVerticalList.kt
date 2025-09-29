@@ -50,7 +50,10 @@ fun <T> LazyVerticalList(
         }
     } else {
         emptyMessageResId?.let { emptyMessage ->
-            EmptyState(emptyMessage = stringResource(id = emptyMessage))
+            EmptyState(
+                modifier = modifier,
+                emptyMessage = stringResource(id = emptyMessage)
+            )
         }
     }
 }
@@ -95,7 +98,10 @@ fun <T> LazyVerticalList(
         }
     } else {
         emptyMessageResId?.let { emptyMessage ->
-            EmptyState(emptyMessage = stringResource(id = emptyMessage))
+            EmptyState(
+                modifier = modifier,
+                emptyMessage = stringResource(id = emptyMessage)
+            )
         }
     }
 }
