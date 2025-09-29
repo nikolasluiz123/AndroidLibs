@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.hiltAndroid)
     alias(libs.plugins.compose.compiler)
     id("android-library-publish")
+    id("git-tagging")
 }
 
 android {

@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.kotlinAndroidKsp)
     id("android-library-publish")
+    id("git-tagging")
 }
 
 android {

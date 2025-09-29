@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.kotlinAndroidKsp)
     alias(libs.plugins.hiltAndroid)
     id("android-library-publish")
+    id("git-tagging")
 }
 
 android {
