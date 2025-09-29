@@ -6,7 +6,7 @@ import androidx.work.WorkerParameters
 import br.com.android.work.manager.toolkit.extensions.getRunExportWorker
 import br.com.android.work.manager.toolkit.extensions.workerDataStore
 import br.com.android.work.manager.toolkit.workers.coroutine.onetime.sync.interfaces.ITokenAuthWorker
-import br.com.android.work.manager.toolkit.workers.log.LogConstants
+import br.com.android.work.manager.toolkit.workers.log.WorkerLogConstants
 
 /**
  * Classe base para Workers de execução única responsáveis por **exportação** de dados
@@ -41,9 +41,9 @@ abstract class AbstractExportationTokenAuthOneTimeWorker(
 
     final override suspend fun onRunWithTransaction() {
         getValidTokenOrNull()?.let { serviceToken ->
-            Log.i(LogConstants.WORKER_EXPORT, "${"-".repeat(50)} Iniciando Exportação ${javaClass.simpleName} ${"-".repeat(50)}")
+            Log.i(WorkerLogConstants.WORKER_EXPORT, "${"-".repeat(50)} Iniciando Exportação ${javaClass.simpleName} ${"-".repeat(50)}")
             onExport(serviceToken)
-            Log.i(LogConstants.WORKER_EXPORT, "${"-".repeat(50)} Finalizando Exportação ${javaClass.simpleName} ${"-".repeat(50)}")
+            Log.i(WorkerLogConstants.WORKER_EXPORT, "${"-".repeat(50)} Finalizando Exportação ${javaClass.simpleName} ${"-".repeat(50)}")
         }
     }
 }

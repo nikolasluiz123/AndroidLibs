@@ -8,7 +8,7 @@ package br.com.android.work.manager.toolkit.workers.log
  *
  * @author Nikolas Luiz Schmitt
  */
-object LogConstants {
+object WorkerLogConstants {
     /** TAG para workers de importação. */
     const val WORKER_IMPORT = "WORKER_IMPORT"
 
