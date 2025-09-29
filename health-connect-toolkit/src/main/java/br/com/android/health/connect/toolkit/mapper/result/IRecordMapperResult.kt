@@ -1,6 +1,6 @@
 package br.com.android.health.connect.toolkit.mapper.result
 
-import br.com.android.room.toolkit.model.health.HealthConnectMetadata
+import br.com.android.room.toolkit.model.health.interfaces.IHealthConnectMetadata
 
 
 /**
@@ -14,7 +14,7 @@ import br.com.android.room.toolkit.model.health.HealthConnectMetadata
  * @author Nikolas Luiz Schmitt
  */
 interface IRecordMapperResult {
-    val metadata: HealthConnectMetadata
+    val metadata: IHealthConnectMetadata
 
     /**
      * Retorna uma lista de IDs das entidades de domínio associadas a este resultado de mapeamento.

@@ -1,6 +1,6 @@
 package br.com.android.health.connect.toolkit.mapper.result
 
-import br.com.android.room.toolkit.model.health.HealthConnectMetadata
+import br.com.android.room.toolkit.model.health.interfaces.IHealthConnectMetadata
 import br.com.android.room.toolkit.model.health.interfaces.IRelationalHealthConnectEntity
 
 /**
@@ -19,7 +19,7 @@ import br.com.android.room.toolkit.model.health.interfaces.IRelationalHealthConn
  */
 data class SingleRecordMapperResult<T: IRelationalHealthConnectEntity>(
     val entity: T,
-    override val metadata: HealthConnectMetadata
+    override val metadata: IHealthConnectMetadata
 ) : IRecordMapperResult {
 
     override fun getEntityIdRelation(): List<String?> = listOf(entity.relationId)

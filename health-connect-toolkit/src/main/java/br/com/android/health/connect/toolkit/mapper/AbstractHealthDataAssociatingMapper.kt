@@ -4,7 +4,7 @@ import androidx.health.connect.client.records.Record
 import br.com.android.health.connect.toolkit.mapper.result.IRecordMapperResult
 import br.com.android.health.connect.toolkit.service.AbstractBaseHealthConnectService
 import br.com.android.health.connect.toolkit.service.filter.RangeFilter
-import br.com.android.room.toolkit.model.health.HealthConnectMetadata
+import br.com.android.room.toolkit.model.health.interfaces.IHealthConnectMetadata
 import br.com.android.room.toolkit.model.health.interfaces.IHealthDataRangeEntity
 import java.time.Instant
 
@@ -63,7 +63,7 @@ abstract class AbstractHealthDataAssociatingMapper<RESULT : IRecordMapperResult,
      */
     protected abstract suspend fun <ENTITY : IHealthDataRangeEntity> continueMappingAndAssociate(
         record: RECORD,
-        metadata: HealthConnectMetadata,
+        metadata: IHealthConnectMetadata,
         associationEntities: List<ENTITY>
     ): RESULT?
 

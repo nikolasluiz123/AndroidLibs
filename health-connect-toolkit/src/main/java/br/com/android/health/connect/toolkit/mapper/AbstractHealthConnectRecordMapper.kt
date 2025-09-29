@@ -4,7 +4,7 @@ import androidx.health.connect.client.records.Record
 import br.com.android.health.connect.toolkit.mapper.result.IRecordMapperResult
 import br.com.android.health.connect.toolkit.service.AbstractBaseHealthConnectService
 import br.com.android.health.connect.toolkit.service.filter.RangeFilter
-import br.com.android.room.toolkit.model.health.HealthConnectMetadata
+import br.com.android.room.toolkit.model.health.interfaces.IHealthConnectMetadata
 
 /**
  * Classe base abstrata para mappers que leem e transformam dados do Health Connect.
@@ -55,6 +55,6 @@ abstract class AbstractHealthConnectRecordMapper<RESULT : IRecordMapperResult, R
      */
     protected abstract suspend fun continueMapping(
         record: RECORD,
-        metadata: HealthConnectMetadata
+        metadata: IHealthConnectMetadata
     ): RESULT
 }
