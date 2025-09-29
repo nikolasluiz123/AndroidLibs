@@ -35,7 +35,7 @@ abstract class AbstractExportationTokenAuthOneTimeWorker(
      */
     abstract suspend fun onExport(serviceToken: String)
 
-    final override suspend fun shouldRunWorker(): Boolean {
+    override suspend fun shouldRunWorker(): Boolean {
         return context.workerDataStore.getRunExportWorker()
     }
 
