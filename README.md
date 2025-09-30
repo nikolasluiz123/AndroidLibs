@@ -141,8 +141,6 @@ Arquitetura opinativa para **WorkManager**.
 
 ---
 
----
-
 ## ⚡ Instalação
 
 Antes de adicionar as dependências, inclua o repositório do GitHub Packages no seu `settings.gradle.kts` ou `build.gradle.kts`:
