@@ -100,7 +100,7 @@ Facilita a integração com **Firebase**: Authentication, Firestore, Storage, An
 
 ---
 
-## ❤️ health-connect-toolkit
+## ❤️  health-connect-toolkit
 
 Abstração da API **Health Connect**.  
 Organizado em **Serviços (records)** e **Mappers (transformação/associação de dados)**.
