@@ -15,7 +15,8 @@ Cada módulo foi projetado para ser independente, reutilizável e facilmente int
 - [🔥 firebase-toolkit](#-firebase-toolkit)  
 - [❤️ health-connect-toolkit](#-health-connect-toolkit)  
 - [🎛 ui-compose-components](#-ui-compose-components)  
-- [⚙️ work-manager-toolkit](#️-work-manager-toolkit)  
+- [⚙️ work-manager-toolkit](#️-work-manager-toolkit)
+- [⚡Instalação](#-instalação)
 
 ---
 
@@ -140,5 +141,80 @@ Arquitetura opinativa para **WorkManager**.
 
 ---
 
-📌 **Sugestão de uso:**  
-Cada módulo pode ser consumido separadamente via Gradle, permitindo usar apenas o que o projeto necessita.  
+---
+
+## ⚡ Instalação
+
+Antes de adicionar as dependências, inclua o repositório do GitHub Packages no seu `settings.gradle.kts` ou `build.gradle.kts`:
+
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/nikolasluiz123/AndroidLibs")
+        }
+    }
+}
+```
+### 📑 1. Usando libs.versions.toml
+```toml
+# versions
+coreUtils = "1.0.0"
+coreAndroidUtils = "1.0.1"
+coreAndroidComposeUtils = "1.0.0"
+androidPDFGenerator = "1.0.0"
+composeCharts = "1.0.0"
+uiComposeComponents = "1.0.4"
+firebaseToolKit = "1.0.2"
+healthConnectToolKit = "1.0.1"
+roomToolKit = "1.0.1"
+workManagerToolKit = "1.0.1"
+
+# libraries
+androidlibs-core-utils = { group = "br.com.androidlibs", name = "core-utils", version.ref = "coreUtils" }
+androidlibs-core-android-utils = { group = "br.com.androidlibs", name = "core-android-utils", version.ref = "coreAndroidUtils" }
+androidlibs-core-android-compose-utils = { group = "br.com.androidlibs", name = "core-android-compose-utils", version.ref = "coreAndroidComposeUtils" }
+androidlibs-android-pdf-generator = { group = "br.com.androidlibs", name = "android-pdf-generator", version.ref = "androidPDFGenerator" }
+androidlibs-compose-charts = { group = "br.com.androidlibs", name = "compose-charts", version.ref = "composeCharts" }
+androidlibs-ui-compose-components = { group = "br.com.androidlibs", name = "ui-compose-components", version.ref = "uiComposeComponents" }
+androidlibs-firebase-toolkit = { group = "br.com.androidlibs", name = "firebase-toolkit", version.ref = "firebaseToolKit" }
+androidlibs-health-connect-toolkit = { group = "br.com.androidlibs", name = "health-connect-toolkit", version.ref = "healthConnectToolKit" }
+androidlibs-room-toolkit = { group = "br.com.androidlibs", name = "room-toolkit", version.ref = "roomToolKit" }
+androidlibs-work-manager-toolkit = { group = "br.com.androidlibs", name = "work-manager-toolkit", version.ref = "workManagerToolKit" }
+```
+
+No seu `build.gradle.kts`:
+```gradle
+dependencies {
+    implementation(libs.androidlibs.core.utils)
+    implementation(libs.androidlibs.core.android.utils)
+    implementation(libs.androidlibs.core.android.compose.utils)
+    implementation(libs.androidlibs.android.pdf.generator)
+    implementation(libs.androidlibs.compose.charts)
+    implementation(libs.androidlibs.ui.compose.components)
+    implementation(libs.androidlibs.firebase.toolkit)
+    implementation(libs.androidlibs.health.connect.toolkit)
+    implementation(libs.androidlibs.room.toolkit)
+    implementation(libs.androidlibs.work.manager.toolkit)
+}
+```
+
+### 📑 2. Usando o formato tradicional (build.gradle)
+```gradle
+dependencies {
+    implementation("br.com.androidlibs:core-utils:1.0.0")
+    implementation("br.com.androidlibs:core-android-utils:1.0.1")
+    implementation("br.com.androidlibs:core-android-compose-utils:1.0.0")
+    implementation("br.com.androidlibs:android-pdf-generator:1.0.0")
+    implementation("br.com.androidlibs:compose-charts:1.0.0")
+    implementation("br.com.androidlibs:ui-compose-components:1.0.4")
+    implementation("br.com.androidlibs:firebase-toolkit:1.0.2")
+    implementation("br.com.androidlibs:health-connect-toolkit:1.0.1")
+    implementation("br.com.androidlibs:room-toolkit:1.0.1")
+    implementation("br.com.androidlibs:work-manager-toolkit:1.0.1")
+}
+```
