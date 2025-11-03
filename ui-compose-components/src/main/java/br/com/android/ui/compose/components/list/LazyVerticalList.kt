@@ -40,6 +40,7 @@ fun <T> LazyVerticalList(
 ) {
     if (items.isNotEmpty()) {
         LazyColumn(
+            modifier = modifier,
             verticalArrangement = Arrangement.spacedBy(verticalArrangementSpace),
             contentPadding = PaddingValues(contentPadding),
             reverseLayout = reverseLayout
